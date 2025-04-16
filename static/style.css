@@ -1,44 +1,112 @@
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Fondo y centrado */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
+/* Contenedor principal */
+.container {
+    animation: fadeIn 1.2s ease forwards;
+}
+
+/* Login Box */
 .login-box {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-    width: 300px;
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+    width: 340px;
     text-align: center;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
 }
 
+.login-box:hover {
+    transform: translateY(0);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Título */
 .login-box h2 {
-    margin-bottom: 20px;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
 }
 
+/* Subtítulo */
+.subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Campos de entrada */
 .login-box input {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f3f3f3;
+    transition: 0.2s;
+    font-size: 14px;
 }
 
+.login-box input:focus {
+    outline: none;
+    background-color: #eaeaea;
+    box-shadow: 0 0 0 2px #a5c7ff;
+}
+
+/* Botón */
 .login-box button {
     width: 100%;
-    padding: 10px;
-    background-color: #007bff;
+    padding: 12px;
+    background-color: #4a90e2;
     color: white;
+    font-weight: bold;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
+    font-size: 15px;
+    transition: background 0.3s;
 }
 
-.login-box .error {
-    color: red;
-    margin-bottom: 10px;
+.login-box button:hover {
+    background-color: #357abd;
+}
+
+/* Mensaje de error */
+.error {
+    color: #ff4d4d;
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+/* Animación fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease both;
 }

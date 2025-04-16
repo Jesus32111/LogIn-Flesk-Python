@@ -2,14 +2,14 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Iniciar sesión</title>
+    <title>Registro</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
         <div class="login-box">
-            <h2 class="fade-in">Bienvenido 👋</h2>
-            <p class="subtitle fade-in">Por favor, inicia sesión para continuar</p>
+            <h2 class="fade-in">Crear cuenta 📝</h2>
+            <p class="subtitle fade-in">Regístrate para continuar</p>
 
             {% if mensaje %}
                 <p class="error">{{ mensaje }}</p>
@@ -18,11 +18,11 @@
             <form method="POST" class="fade-in">
                 <input type="text" name="username" placeholder="Usuario" required>
                 <input type="password" name="password" placeholder="Contraseña" required>
-                <button type="submit">Ingresar</button>
+                <button type="submit">Registrarse</button>
             </form>
 
             <p style="margin-top: 15px;" class="fade-in">
-                ¿No tienes cuenta? <a href="{{ url_for('registro') }}">Regístrate</a>
+                ¿Ya tienes cuenta? <a href="{{ url_for('login') }}">Inicia sesión</a>
             </p>
         </div>
     </div>
